@@ -1,11 +1,11 @@
 const MongoClient = require("mongodb").MongoClient;
+const settings = require('../settings');
 
-const url = 'mongodb://admin:zxcvbnm@118.24.68.134:27097/?authSource=admin';
 const dbName = 'haha';
 
 //下划线代表内部函数
 function _connectDB(callback) {
-    MongoClient.connect(url, function (err, client) {
+    MongoClient.connect(settings.dbUrl, function (err, client) {
         callback(err, client);
     });
 }
